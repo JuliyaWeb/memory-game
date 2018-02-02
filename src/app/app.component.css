@@ -1,0 +1,156 @@
+h1 {
+  margin-bottom: 0;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.main {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Gloria Hallelujah', sans-serif;
+}
+
+.cards-deck {
+  width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 21px rgba(0, 0, 0, 0.5);
+  background-color: #9a9a9a;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 125px;
+  height: 125px;
+  list-style: none;
+  background-color: #141214;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 5px;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  font-size: 33px;
+  cursor: pointer;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transition: .5s ease-in-out;
+}
+
+.card .outside {
+  color: #9a9a9a;
+  transform: rotateX(0);
+}
+
+.card .outside, .card .inside {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card .inside {
+  color: #fff;
+  transform: rotateY(-180deg);
+}
+
+.card.open {
+  background-color: #20a8d8;
+  pointer-events: none;
+  transform: rotateY(180deg);
+}
+
+.card.match {
+  background-color: #1fa91f;
+  pointer-events: none;
+}
+
+.card.unmatch {
+  background-color: red;
+}
+
+.ul-modal.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.ul-modal.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.ul-modal .modal {
+  margin: 70px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 5px;
+  width: 55%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  font-style: italic;
+  font-family: 'Gloria Hallelujah', sans-serif;
+}
+
+.modal .fa-close {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px 6px;
+  border: 1px solid;
+  border-radius: 50%;
+  color: #3ca8d8;
+  opacity: 0.5;
+}
+
+.modal .fa-close:hover {
+  opacity: 1;
+}
+
+.modal h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 0;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.modal .content {
+  text-align: center;
+}
+
+.modal .content span {
+  font-weight: bold;
+}
+
+.ul-modal .btn {
+  background-color: #20a8d8;
+  color: #fff;
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 0;
+  width: 40%;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Gloria Hallelujah', cursive;
+}

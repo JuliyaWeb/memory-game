@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="header">
+    <h1>Memory Game</h1>
+    <h3>{{cardMove}} Move(s),
+      <ng-container *ngIf="hour > 0">{{hour}} hours</ng-container>
+      {{minute}} mins {{second}} secs
+      <i class="fa fa-refresh cursor" (click)="restartGame()"></i>
+    </h3>
+  </div>
+  <ul class="cards-deck">
+    <li class="card" *ngFor="let item of items;"
+        (click)="cardOpen(item)"
+        [ngClass]="item.state">
+      <span class="outside"><i class="fa fa-question"></i></span>
+      <span class="inside"><i class="fa fa-{{item.icon}}"></i></span>
+    </li>
+  </ul>
+</div>
+
+<ng-container *ngIf="gameOver">
+  <div class="ul-modal overlay" [class.open]="gameOver">
+    <div class="modal">
+      <i class="fa fa-close" (click)="gameOver = !gameOver"></i>
+      <h2>Congratulations!</h2>
+      <div class="content">
+        <h3>Congratulations you're a winner!</h3>
+        <p>You made <span>{{cardMove}} moves </span>
+          in <span>{{getTotalTime()}}</span></p>
+      </div>
+      <button class="btn" (click)="restartGame()">Play again</button>
+    </div>
+  </div>
+</ng-container>

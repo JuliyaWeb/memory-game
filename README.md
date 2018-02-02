@@ -2,6 +2,8 @@
 
 The memory game is a simple game to test the player's memory. In a deck of paired cards, the player needs to match each pair to win the game.
 
+![](screenshot.png)
+
 ## Development server
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
